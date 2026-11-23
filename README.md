@@ -1,0 +1,56 @@
+# Loja de Eletrônicos — Algoritmos de Ordenação, Busca e Seleção em C#
+
+Projeto acadêmico em **C# (.NET 8, console)** que simula o estoque de uma loja de eletrônicos
+usando uma **estrutura de dados linear** (`List<Produto>`) e aplica algoritmos clássicos de
+**ordenação, busca e seleção**, todos implementados manualmente (sem `List.Sort`, `Where`, etc.).
+
+## Integrantes
+
+- Richard Afonso
+- Felipe Hur
+- Andre Joshua
+
+
+## Estrutura de dados
+
+Lista sequencial (linear) de objetos `Produto` (código, nome, categoria, preço e estoque).
+
+## Algoritmos aplicados
+
+| Categoria | Algoritmo | Critério | Complexidade |
+|-----------|-----------|----------|--------------|
+| Ordenação | Insertion Sort | preço, nome ou código | O(n²) |
+| Ordenação | Quick Sort | preço, nome ou código | O(n log n) médio |
+| Busca | Busca Linear | nome (contém o termo) | O(n) |
+| Busca | Busca Binária | código (lista ordenada) | O(log n) |
+| Seleção | Filtro por categoria | categoria | O(n) |
+| Seleção | N mais baratos (Selection Sort parcial) | preço | O(n·N) |
+
+Os métodos de ordenação e busca informam a **quantidade de comparações**, o que permite
+comparar a eficiência dos algoritmos na prática.
+
+## Organização dos arquivos
+
+```
+LojaEletronicos/
+├── Program.cs      # menu interativo
+├── Produto.cs      # classe do produto
+├── Ordenacao.cs    # Insertion Sort e Quick Sort
+├── Busca.cs        # Busca Linear e Binária
+├── Selecao.cs      # Seleção por categoria e N mais baratos
+└── LojaEletronicos.csproj
+```
+
+## Como executar
+
+Pré-requisito: [.NET SDK 8](https://dotnet.microsoft.com/download)
+
+```bash
+git clone <URL-DO-REPOSITORIO>
+cd LojaEletronicos
+dotnet run
+```
+
+## Prints de execução
+
+Os prints de execução estão no PDF de documentação (e na pasta `prints/`, se incluída).
