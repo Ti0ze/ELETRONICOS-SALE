@@ -1,6 +1,6 @@
 # Loja de Eletrônicos — Algoritmos de Ordenação, Busca e Seleção em C#
 
-Projeto acadêmico em **C# (.NET 8, console)** que simula o estoque de uma loja de eletrônicos
+Projeto acadêmico em **C#** que simula o estoque de uma loja de eletrônicos
 usando uma **estrutura de dados linear** (`List<Produto>`) e aplica algoritmos clássicos de
 **ordenação, busca e seleção**, todos implementados manualmente (sem `List.Sort`, `Where`, etc.).
 
