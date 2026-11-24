@@ -7,7 +7,7 @@ usando uma **estrutura de dados linear** (`List<Produto>`) e aplica algoritmos c
 ## Integrantes
 
 - Richard Afonso
-- Felipe Hur
+- Filipe Hur
 - Andre Joshua
 
 
