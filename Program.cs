@@ -5,7 +5,7 @@ using LojaEletronicos;
 Console.OutputEncoding = Encoding.UTF8;
 CultureInfo.CurrentCulture = new CultureInfo("pt-BR");
 
-
+// Estrutura de dados LINEAR: lista sequencial de produtos
 var estoque = new List<Produto>
 {
     new(105, "Notebook Gamer X15",     "Notebook",   6499.90m,  5),
@@ -25,7 +25,8 @@ var estoque = new List<Produto>
 int opcao;
 do
 {
-    Console.WriteLine("\n===== LOJA DE ELETRÔNICOS =====");
+    Console.Clear();
+    Console.WriteLine("===== LOJA DE ELETRÔNICOS =====");
     Console.WriteLine("1 - Listar produtos");
     Console.WriteLine("2 - Cadastrar produto");
     Console.WriteLine("3 - Ordenar (Insertion Sort / Quick Sort)");
@@ -33,6 +34,8 @@ do
     Console.WriteLine("5 - Selecionar (Categoria / N mais baratos)");
     Console.WriteLine("0 - Sair");
     opcao = LerInt("Escolha: ");
+
+    Console.Clear(); // limpa o terminal ao selecionar uma opção
 
     switch (opcao)
     {
@@ -44,15 +47,23 @@ do
         case 0: Console.WriteLine("Encerrando..."); break;
         default: Console.WriteLine("Opção inválida."); break;
     }
+
+    if (opcao != 0)
+    {
+        Console.WriteLine("\nPressione ENTER para voltar ao menu...");
+        Console.ReadLine();
+    }
 } while (opcao != 0);
 
-
+// ---------------------------------------------------------------
 void MenuOrdenar()
 {
     Console.WriteLine("\nAlgoritmo: 1 - Insertion Sort | 2 - Quick Sort");
     int alg = LerInt("Escolha: ");
     Console.WriteLine("Critério: 1 - Preço | 2 - Nome | 3 - Código");
     int crit = LerInt("Escolha: ");
+
+    Console.Clear();
 
     Comparison<Produto> cmp = crit switch
     {
@@ -74,10 +85,11 @@ void MenuBuscar()
 {
     Console.WriteLine("\nBusca: 1 - Linear por nome | 2 - Binária por código");
     int tipo = LerInt("Escolha: ");
+    Console.Clear();
 
     if (tipo == 2)
     {
-        
+        // A busca binária exige lista ordenada por código: ordenamos uma CÓPIA
         var copia = new List<Produto>(estoque);
         Ordenacao.QuickSort(copia, Ordenacao.PorCodigo);
 
