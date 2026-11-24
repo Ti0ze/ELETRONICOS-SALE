@@ -5,7 +5,6 @@ using LojaEletronicos;
 Console.OutputEncoding = Encoding.UTF8;
 CultureInfo.CurrentCulture = new CultureInfo("pt-BR");
 
-// Estrutura de dados LINEAR: lista sequencial de produtos
 var estoque = new List<Produto>
 {
     new(105, "Notebook Gamer X15",     "Notebook",   6499.90m,  5),
@@ -35,7 +34,7 @@ do
     Console.WriteLine("0 - Sair");
     opcao = LerInt("Escolha: ");
 
-    Console.Clear(); // limpa o terminal ao selecionar uma opção
+    Console.Clear(); 
 
     switch (opcao)
     {
@@ -55,7 +54,6 @@ do
     }
 } while (opcao != 0);
 
-// ---------------------------------------------------------------
 void MenuOrdenar()
 {
     Console.WriteLine("\nAlgoritmo: 1 - Insertion Sort | 2 - Quick Sort");
@@ -89,7 +87,6 @@ void MenuBuscar()
 
     if (tipo == 2)
     {
-        // A busca binária exige lista ordenada por código: ordenamos uma CÓPIA
         var copia = new List<Produto>(estoque);
         Ordenacao.QuickSort(copia, Ordenacao.PorCodigo);
 
